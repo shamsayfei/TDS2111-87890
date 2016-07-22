@@ -7,9 +7,15 @@ void insert(char item, int Index){
         head = newPtr;
         return;
     }
+    Node* newPtr2 = head;
+    for(int i=0; i<n-2; i++){
+        newPtr2 = newPtr2->next;
+    }
+newPtr->next = newPtr2->next;
+newPtr2->next = newPtr;
+}
 
-void delete(char item, int Index)
-{
+void delete(char item, int Index){
     struct Node* newPtr = head;
     if(n ==1){
         head = newPtr->next;
