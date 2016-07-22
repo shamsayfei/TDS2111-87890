@@ -10,17 +10,17 @@ void insert(char item, int Index){
 
 void delete(char item, int Index)
 {
-    struct Node* temp1 = head;
+    struct Node* newPtr = head;
     if(n ==1){
-        head = temp1->next;
-        free(temp1);
+        head = newPtr->next;
+        free(newPtr);
         return;
     }
     int i;
     for(i = 0; i < n-2; i++)
-        temp1 = temp1->next;
+        newPtr = newPtr->next; //newPtr pointing to (n-1)th node
     
-    struct Node* temp2 = temp1->next;
-    temp1->next = temp2->next;
-    free(temp2);
+    struct Node* newPtr2 = newPtr->next; //nth node
+    newPtr->next = newPtr2->next;
+    free(newPtr2);
 }
