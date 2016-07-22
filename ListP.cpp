@@ -1,10 +1,10 @@
 #include "ListP.h"
 
 void insert(char item, int Index){
-    struct Node* temp1 = new Node();
+    struct Node* newPtr = new Node();
     if(n == 1){
-        temp1->next = head;
-        head = temp1;
+        newPtr->next = head;
+        head = newPtr;
         return;
     }
 
