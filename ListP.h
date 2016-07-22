@@ -12,9 +12,7 @@ struct node
     int Index;
 };
 
-void insertFirst(char item, int Index);
-void insertMiddle(char item, int Index);
-void insertLast(char item, int Index);
+void insert(char item, int Index);
 void delete(char item, int Index);
 
 
