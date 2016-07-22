@@ -6,3 +6,10 @@ void insertFirst(char item, int Index){
     newitem->next = head;
     head = newitem;
 }
+
+void insertMiddle(char item, int Index){
+    Nodeindex *newitem = newNodeindex;
+    newitem->Index = 2;
+    newitem->next = cur->next; //next address of node newitem will be pointing to the same address where cur is pointing to.
+    cur->next = newitem; 
+}
