@@ -9,13 +9,13 @@ struct node
 {
     char item;
     node * next;
-    int index;
+    int Index;
 };
 
-void insertFirst(char item, int index);
-void insertMiddle(char item, int index);
-void insertLast(char item, int index);
-void delete(char item, int index);
+void insertFirst(char item, int Index);
+void insertMiddle(char item, int Index);
+void insertLast(char item, int Index);
+void delete(char item, int Index);
 
 
 #endif
