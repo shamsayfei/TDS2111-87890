@@ -19,7 +19,7 @@ void delete(char item, int Index){
     struct Node* newPtr = head;
     if(Index ==1){
         head = newPtr->next;
-        free(newPtr);
+        delete newPtr;
         return;
     }
     int i;
@@ -28,5 +28,5 @@ void delete(char item, int Index){
     
     struct Node* newPtr2 = newPtr->next; //nth node
     newPtr->next = newPtr2->next;
-    free(newPtr2);
+    delete newPtr2;
 }
