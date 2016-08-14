@@ -24,9 +24,9 @@ void delete(char item, int Index){
         return;
     }
     int i;
-    for(i = 0; i < Index-2; i++)
+    for(i = 0; i < Index-2; i++){
         newPtr = newPtr->next; //newPtr pointing to (Index-1)th node
-    
+    }    
     struct Node* newPtr2 = newPtr->next; //nth node
     newPtr->next = newPtr2->next;
     delete newPtr2;
@@ -72,4 +72,17 @@ string retrieve(int Index){
         cur = cur->next
     }
     return cur;
+}
+
+find(int Index){
+    if(Index<1){
+        return;
+    }
+    else{
+        Node * cur = head;
+        for(int i = 1; i<Index; i++){
+            cur = cur->next;
+        }
+        return cur;
+    }
 }
