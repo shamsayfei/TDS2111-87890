@@ -48,3 +48,17 @@ void remove(int Index){
     cur->next = NULL;
     delete cur;
 }
+
+void remove(int Index, string subtitle){
+    Node * prev;
+    if(Index == 0)
+    cout<<"List is empty.";
+    return;
+    else{
+        Node * prev = (Index-1);
+        cur = prev->next;
+        prev->next = cur->next;
+    }
+    cur->next = NULL;
+    delete cur;
+}
