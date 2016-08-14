@@ -1,3 +1,4 @@
+#include<iostream>
 #include "ListP.h"
 
 void insert(char item, int Index, string subtitle){
@@ -32,7 +33,7 @@ void delete(char item, int Index){
 }
 
 void remove(int Index){
-    Node * prev;
+    struct Node * prev;
     if(Index<1){
         return;
     }
@@ -40,6 +41,21 @@ void remove(int Index){
         cur = head;
         head = head->next;
     }
+    else{
+        struct Node * prev = Index-1;
+        cur = prev->next;
+        prev->next = cur->next;
+    }
+    cur->next = NULL;
+    delete cur;
+}
+
+void remove(int Index, string subtitle){
+    struct Node * prev;
+    if(Index == 0){
+    cout<<"List is empty.";
+    return;
+}
     else{
         Node * prev = Index-1;
         cur = prev->next;
@@ -49,16 +65,11 @@ void remove(int Index){
     delete cur;
 }
 
-void remove(int Index, string subtitle){
-    Node * prev;
-    if(Index == 0)
-    cout<<"List is empty.";
-    return;
-    else{
-        Node * prev = (Index-1);
-        cur = prev->next;
-        prev->next = cur->next;
+string retrieve(int Index){
+    cur = head;
+    
+    for(int i = 0; i<Index && cur != NULL; i++){
+        cur = cur->next
     }
-    cur->next = NULL;
-    delete cur;
+    return cur;
 }
